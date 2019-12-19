@@ -43,8 +43,215 @@ class Util {
         }
         return false;
     }
-    
+    //News
+    public static function addNews($arrNews) {
+        $news = new News();
+        if (isset($arrNews['category_id'])) {
+            $news->category_id = $arrNews['category_id'];
+        }
+        if (isset($arrNews['title_h1'])) {
+            $news->title_h1 = $arrNews['title_h1'];
+        }
+        if (isset($arrNews['desc'])) {
+            $news->desc = $arrNews['desc'];
+        }
+        if (isset($arrNews['bgr'])) {
+            $news->bgr = $arrNews['bgr'];
+        }
+        if (isset($arrNews['content'])) {
+            $news->content = $arrNews['content'];
+        }
+        if (isset($arrNews['images1'])) {
+            $news->images1 = $arrNews['images1'];
+        }
+        if (isset($arrNews['text1'])) {
+            $news->text1 = $arrNews['text1'];
+        }
+        if (isset($arrNews['images2'])) {
+            $news->images2 = $arrNews['images2'];
+        }
+        if (isset($arrNews['text2'])) {
+            $news->text2 = $arrNews['text2'];
+        }
+        if (isset($arrNews['images3'])) {
+            $news->images3 = $arrNews['images3'];
+        }        
+        if (isset($arrNews['text3'])) {
+            $news->text3 = $arrNews['text3'];
+        }        
+        if (isset($arrNews['text4'])) {
+            $news->text4 = $arrNews['text4'];
+        }        
+        if (isset($arrNews['images4'])) {
+            $news->images4 = $arrNews['images4'];
+        }        
+        if (isset($arrNews['text5'])) {
+            $news->text5 = $arrNews['text5'];
+        }        
+        if (isset($arrNews['images5'])) {
+            $news->images5 = $arrNews['images5'];
+        }        
+        if (isset($arrNews['hot_news'])) {
+            $news->hot_news = $arrNews['hot_news'];
+        }
+        $news->save();
+    }
 
+    public static function updateNewsById($id, $arrNews) {
+        if (!isset($id) || !isset($arrNews)) {
+            return false;
+        }
+        $news = News::find($id);
+        if (isset($arrNews['category_id'])) {
+            $news->category_id = $arrNews['category_id'];
+        }
+        if (isset($arrNews['title_h1'])) {
+            $news->title_h1 = $arrNews['title_h1'];
+            $news->title = Util::removeUnicode($arrNews['title_h1']);
+        }
+        if (isset($arrNews['desc'])) {
+            $news->desc = $arrNews['desc'];
+        }
+        if (isset($arrNews['bgr'])) {
+            $news->bgr = $arrNews['bgr'];
+        }
+        if (isset($arrNews['content'])) {
+            $news->content = $arrNews['content'];
+        }
+        if (isset($arrNews['images1'])) {
+            $news->images1 = $arrNews['images1'];
+        }
+        if (isset($arrNews['text1'])) {
+            $news->text1 = $arrNews['text1'];
+        }
+        if (isset($arrNews['images2'])) {
+            $news->images2 = $arrNews['images2'];
+        }
+        if (isset($arrNews['text2'])) {
+            $news->text2 = $arrNews['text2'];
+        }
+        if (isset($arrNews['images3'])) {
+            $news->images3 = $arrNews['images3'];
+        }        
+        if (isset($arrNews['text3'])) {
+            $news->text3 = $arrNews['text3'];
+        }        
+        if (isset($arrNews['text4'])) {
+            $news->text4 = $arrNews['text4'];
+        }        
+        if (isset($arrNews['images4'])) {
+            $news->images4 = $arrNews['images4'];
+        }        
+        if (isset($arrNews['text5'])) {
+            $news->text5 = $arrNews['text5'];
+        }        
+        if (isset($arrNews['images5'])) {
+            $news->images5 = $arrNews['images5'];
+        }        
+        if (isset($arrNews['hot_news'])) {
+            $news->hot_news = $arrNews['hot_news'];
+        }
+        $news->save();
+        return true;
+    }
+
+    public static function deleteNewsById($id) {
+        if (!isset($id)) {
+            return false;
+        }
+        $find = News::find($id);
+        $find->delete();
+        return true;
+    }
+
+    public static function getANewsById($id) {
+        if (!isset($id)) {
+            return false;
+        }
+        $news = News::find($id);
+        if ($news->exist()) {
+            return $news;
+        }
+        return false;
+    }
+    public static function getAllNews() {
+        $allNews = News::get();
+        if (isset($allNews['images1'])) {
+            $allNews['list_img1'] = Util::convertImgToArrayImg($allNews['images1']);
+        }
+        if (isset($allNews['images2'])) {
+            $allNews['list_img2'] = Util::convertImgToArrayImg($allNews['images2']);
+        }
+        if (isset($allNews['images3'])) {
+            $allNews['list_img3'] = Util::convertImgToArrayImg($allNews['images3']);
+        }
+        if (isset($allNews['images4'])) {
+            $allNews['list_img4'] = Util::convertImgToArrayImg($allNews['images4']);
+        }
+        if (isset($allNews['images5'])) {
+            $allNews['list_img5'] = Util::convertImgToArrayImg($allNews['images5']);
+        }
+        return $allNews;
+    }
+
+    //Inbox
+    public static function getAllInbox() {
+        $arr = Inbox::get()->paginate(16);
+        return $arr;
+    }
+
+    public static function addInbox($arr) {
+        $ib = new Inbox();
+        if (isset($arr['fullname'])) {
+            $ib->fullname = $arr['fullname'];
+        }
+        if (isset($arr['address'])) {
+            $ib->address = $arr['address'];
+        }
+        if (isset($arr['phone'])) {
+            $ib->phone = $arr['phone'];
+        }
+        if (isset($arr['email'])) {
+            $ib->email = $arr['email'];
+        }
+        if (isset($arr['content'])) {
+            $ib->content = $arr['content'];
+        }
+        if (isset($arr['status'])) {
+            $ib->status = $arr['status'];
+        }
+        $ib->save();
+    }
+
+    public static function getInboxById($id) {
+        if (!isset($id)) {
+            return false;
+        }
+        $record = Inbox::find($id);
+        return $record;
+    }
+    public static function deleteInboxById($id) {
+        if (!isset($id)) {
+            return false;
+        }
+        $record = Inbox::find($id);
+        $record->delete();
+        return true;
+    }
+
+    public static function updateStatusInboxById($id, $status) {
+        if (!isset($id)) {
+            return false;
+        }
+        $record = Inbox::find($id);
+        $record->status = $status;
+        $record->save();
+    }
+
+    public static function convertImgToArrayImg($allNews) {
+        $arr = explode('|', $allNews);
+        return $arr;
+    }
 
     public static function getPathArrayImg($arrayPath){
         $stringPath = '';
@@ -82,6 +289,22 @@ class Util {
        $str = str_replace("?", "", $str);
        $str = strtolower($str);
 	   return $str;
+    }
+
+    public static function getListImgClient($requestFile) {
+        $images = array();
+        $files = $requestFile;
+        foreach($files as $index => $file) {
+            $fileName = time().'x'.$index.$file->getClientOriginalName();
+            $pathFile = public_path('/images/upload/');
+            
+            $file->move($pathFile, $fileName);
+            $images[] = $fileName;
+        }
+        $fileExist = true;
+        
+        $stringPath = Util::getPathArrayImg($images);
+        return $stringPath;
     }
 	
 ?>

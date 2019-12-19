@@ -22,6 +22,10 @@ Route::group(['namespace' => 'Auth'], function(){
 Route::group(['namespace' => 'admin', 'middleware'=>'CheckLoggedOut'], function(){
     Route::group(['prefix' => 'admin'], function() {
         Route::get('/home', 'HomeController@getIndex');
+        Route::get('/category', 'CategoryController@getIndexCategory');
+        Route::post('/category/add', 'CategoryController@addCategory');
+        Route::get('/category/edit/{id}', 'CategoryController@updateCategory');
+        Route::get('/category/delete/{id}', 'CategoryController@deleteCategoryById');
     });
 }); 
 
