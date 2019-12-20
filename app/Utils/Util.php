@@ -1,7 +1,9 @@
 <?php
-use Model\Category;
-use Model\News;
-use Model\Inbox;
+namespace App\Utils;
+use App\Model\Category;
+use App\Model\News;
+use App\Model\Inbox;
+use Illuminate\Support\Facades\DB;
 
 class Util {
     protected $util;
@@ -11,7 +13,11 @@ class Util {
 
     //category
     public static function getCategory() {
-        return Category::get()->paginate(8);
+        return Category::paginate(8);
+    }
+
+    public static function getListCategory() {
+        return Category::get();
     }
     public static function addCategory($arrCategory) {
         $category = new Category();
@@ -29,6 +35,12 @@ class Util {
             return true;
         }
         return false;
+    }
+    public static function getACategoryById($id) {
+        if (isset($id)) {
+            $category = Category::find($id);
+            return $category;
+        }
     }
 
     public static function updateCategoryById($id, $arrCategory) {
@@ -51,12 +63,14 @@ class Util {
         }
         if (isset($arrNews['title_h1'])) {
             $news->title_h1 = $arrNews['title_h1'];
+            $news->title = Util::removeUnicode($arrNews['title_h1']);
         }
         if (isset($arrNews['desc'])) {
             $news->desc = $arrNews['desc'];
         }
         if (isset($arrNews['bgr'])) {
             $news->bgr = $arrNews['bgr'];
+            
         }
         if (isset($arrNews['content'])) {
             $news->content = $arrNews['content'];
@@ -169,13 +183,17 @@ class Util {
             return false;
         }
         $news = News::find($id);
-        if ($news->exist()) {
+        if ($news->exists()) {
             return $news;
         }
         return false;
     }
     public static function getAllNews() {
-        $allNews = News::get();
+        $allNews = DB::table('news')
+        ->join('category', 'news.category_id', '=', 'category.id')
+        ->select('category.name', 'news.id', 'news.title', 'news.title_h1', 'news.desc', 'news.bgr', 'news.content', 'news.images1', 'news.text1', 'news.images2', 'news.text2', 'news.images3', 'news.text3', 'news.images4', 'news.text4', 'news.images5', 'news.text5', 'news.hot_news', 'news.created_at')
+        ->paginate(8);
+        // $allNews = News::paginate(8);
         if (isset($allNews['images1'])) {
             $allNews['list_img1'] = Util::convertImgToArrayImg($allNews['images1']);
         }
@@ -256,7 +274,7 @@ class Util {
     public static function getPathArrayImg($arrayPath){
         $stringPath = '';
         foreach ($arrayPath as $path) {
-            $stringPath = $stringPath . '/images/account/'.$path . '|';
+            $stringPath = $stringPath . '/images/upload/'.$path . '|';
         }
         //tru di phan tu cuoi'
         return substr("$stringPath",0, strlen($stringPath)-1);
@@ -307,5 +325,5 @@ class Util {
         return $stringPath;
     }
 	
-?>
 }
+?>

@@ -8,18 +8,19 @@
 </head>
 <body>
 <div class="container">
-    @include('errors.error')
-    @if(count($errors) > 0)
-      <div class="alert alert-danger">
-        <ul>
-          @foreach ($errors->all() as $error)
-            <li>{{$error}}</li>
-          @endforeach
-        </ul>
-      </div>
-    @endif
+
 	<div class="row justify-content-center" style="margin-top: 15px;">
 		<div class="col-md-6">
+			@include('errors.error')
+			@if(count($errors) > 0)
+			  <div class="alert alert-danger">
+				<ul>
+				  @foreach ($errors->all() as $error)
+					<li>{{$error}}</li>
+				  @endforeach
+				</ul>
+			  </div>
+			@endif
 			<!-- card primary -->
 			<div class="card border-primary">
 				<div class="card card-header bg-primary text-white" style="padding:7px !important;">Login</div>
