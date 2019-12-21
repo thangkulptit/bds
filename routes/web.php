@@ -42,9 +42,15 @@ Route::group(['namespace' => 'admin', 'middleware'=>'CheckLoggedOut'], function(
 
         Route::get('/news/delete/{id}', 'NewsController@deleteNewsById');
         
+        //inbox
+        Route::get('/inbox', 'InboxController@getIndexInbox');
+        Route::get('/inbox/{id}', 'InboxController@getInboxDetail');
+        Route::get('/inbox/{id}', 'InboxController@deleteInboxById');
     });
-}); 
+});
+//add inbox 
+Route::post('inbox/add', 'InboxController@getInboxDetail');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend/master');
 });

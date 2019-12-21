@@ -3,11 +3,12 @@
     border-radius: 10%;
     border: 1px solid #691d1d;
     background: #dc3545;
-   
+    font-size: 10px;
 }
 .badge-success {
     padding: 4px;
     border-radius: 10%;
     border: 1px solid #691d1d;
     background: #37a74f;
+    font-size: 10px;
 }

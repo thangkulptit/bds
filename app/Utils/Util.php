@@ -214,7 +214,7 @@ class Util {
 
     //Inbox
     public static function getAllInbox() {
-        $arr = Inbox::get()->paginate(16);
+        $arr = Inbox::paginate(16);
         return $arr;
     }
 

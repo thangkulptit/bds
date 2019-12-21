@@ -4,9 +4,14 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Utils\Util;
 
 class InboxController extends Controller
 {
+    public function getIndexInbox() {
+        $data['listInbox'] = Util::getAllInbox();
+        return view('backend/inbox', $data);
+    }
     public function addInbox(Request $request) {
         $arr = array();
         $arr['fullname'] = $request->get('fullname');

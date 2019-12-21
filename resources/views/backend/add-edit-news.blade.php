@@ -16,7 +16,7 @@
                                       @if (sizeof($listCate) > 0)
                                         <option value="">Chọn danh mục</option>
                                         @foreach ($listCate as $rows)
-                                            <option @if($record->category_id == $rows->id) selected @endif value="{{$rows->id}}">{{$rows->name}}</option>
+                                            <option @if(isset($record) && $record->category_id == $rows->id) selected @endif value="{{$rows->id}}">{{$rows->name}}</option>
                                         @endforeach
                                       @endif
                                     </select>
@@ -63,7 +63,7 @@
                                 <input type="file" class="form-control" name="images5[]" id="" multiple>
                                 <textarea type="text" class="form-control" name="text5" id="" placeholder="Nội dung vị trí 5" value="{{isset($record->text5) ? $record->text5 : ""}}" ></textarea>
                             </div>
-                            <strong>Bài viết hot</strong> <input type="checkbox" style="margin-left: 20px;" @if($record->hot_news == 1) checked @endif class="form-check-input" name="hot_news" id="" value="1">
+                            <strong>Bài viết hot</strong> <input type="checkbox" style="margin-left: 20px;" @if(isset($record) && $record->hot_news == 1) checked @endif class="form-check-input" name="hot_news" id="" value="1">
                          
                         </div>
                         <div class="card-footer" style="padding:7px !important">
