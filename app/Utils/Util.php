@@ -3,6 +3,7 @@ namespace App\Utils;
 use App\Model\Category;
 use App\Model\News;
 use App\Model\Inbox;
+use App\Model\Setting;
 use Illuminate\Support\Facades\DB;
 
 class Util {
@@ -10,15 +11,29 @@ class Util {
     public function __contructor(Util $util) {
         $this->util = $util;
     }
+    //setting
+    public static function getSettings() {
+        //setting = 0 : Duoi' Header
+        return Setting::where('type', 0)->limit(4)->paginate(8);
+    }
+
+    public static function findLienHeSettings() {
+        //lien he seting
+        return Setting::where('type', 1)->limit(1)->get();
+    }
 
     //category
     public static function getCategory() {
         return Category::paginate(8);
     }
+    public static function getCategoryById($id) {
+        return Category::find($id);
+    }
 
     public static function getListCategory() {
         return Category::get();
     }
+
     public static function addCategory($arrCategory) {
         $category = new Category();
         if (isset($arrCategory['name'])) {
@@ -191,9 +206,87 @@ class Util {
     public static function getAllNews() {
         $allNews = DB::table('news')
         ->join('category', 'news.category_id', '=', 'category.id')
-        ->select('category.name', 'news.id', 'news.title', 'news.title_h1', 'news.desc', 'news.bgr', 'news.content', 'news.images1', 'news.text1', 'news.images2', 'news.text2', 'news.images3', 'news.text3', 'news.images4', 'news.text4', 'news.images5', 'news.text5', 'news.hot_news', 'news.created_at')
+        ->select('category.name', 'category.title as title_category', 'news.id', 'news.title', 'news.title_h1', 'news.desc', 'news.bgr', 'news.content', 'news.images1', 'news.text1', 'news.images2', 'news.text2', 'news.images3', 'news.text3', 'news.images4', 'news.text4', 'news.images5', 'news.text5', 'news.hot_news', 'news.created_at')
         ->paginate(8);
         // $allNews = News::paginate(8);
+        if (isset($allNews['images1'])) {
+            $allNews['list_img1'] = Util::convertImgToArrayImg($allNews['images1']);
+        }
+        if (isset($allNews['images2'])) {
+            $allNews['list_img2'] = Util::convertImgToArrayImg($allNews['images2']);
+        }
+        if (isset($allNews['images3'])) {
+            $allNews['list_img3'] = Util::convertImgToArrayImg($allNews['images3']);
+        }
+        if (isset($allNews['images4'])) {
+            $allNews['list_img4'] = Util::convertImgToArrayImg($allNews['images4']);
+        }
+        if (isset($allNews['images5'])) {
+            $allNews['list_img5'] = Util::convertImgToArrayImg($allNews['images5']);
+        }
+        return $allNews;
+    }
+
+    public static function getAllNewsHot() {
+        $allNews = DB::table('news')
+        ->join('category', 'news.category_id', '=', 'category.id')
+        ->select('category.name', 'category.title as title_category', 'news.id', 'news.title', 'news.title_h1', 'news.desc', 'news.bgr', 'news.content', 'news.images1', 'news.text1', 'news.images2', 'news.text2', 'news.images3', 'news.text3', 'news.images4', 'news.text4', 'news.images5', 'news.text5', 'news.hot_news', 'news.created_at')
+        ->where('hot_news', 1)
+        ->orderBy('created_at', 'DESC')
+        ->limit(2)
+        ->paginate(8);
+
+        if (isset($allNews['images1'])) {
+            $allNews['list_img1'] = Util::convertImgToArrayImg($allNews['images1']);
+        }
+        if (isset($allNews['images2'])) {
+            $allNews['list_img2'] = Util::convertImgToArrayImg($allNews['images2']);
+        }
+        if (isset($allNews['images3'])) {
+            $allNews['list_img3'] = Util::convertImgToArrayImg($allNews['images3']);
+        }
+        if (isset($allNews['images4'])) {
+            $allNews['list_img4'] = Util::convertImgToArrayImg($allNews['images4']);
+        }
+        if (isset($allNews['images5'])) {
+            $allNews['list_img5'] = Util::convertImgToArrayImg($allNews['images5']);
+        }
+        return $allNews;
+    }
+    public static function getANewsTieuBieu() {
+        $allNews = DB::table('news')
+        ->join('category', 'news.category_id', '=', 'category.id')
+        ->select('category.name', 'category.title as title_category', 'news.id', 'news.title', 'news.title_h1', 'news.desc', 'news.bgr', 'news.content', 'news.images1', 'news.text1', 'news.images2', 'news.text2', 'news.images3', 'news.text3', 'news.images4', 'news.text4', 'news.images5', 'news.text5', 'news.hot_news', 'news.created_at')
+        ->where('tieu_bieu', 1)
+        ->orderBy('created_at', 'DESC')
+        ->limit(1)
+        ->paginate(8);
+        
+        if (isset($allNews['images1'])) {
+            $allNews['list_img1'] = Util::convertImgToArrayImg($allNews['images1']);
+        }
+        if (isset($allNews['images2'])) {
+            $allNews['list_img2'] = Util::convertImgToArrayImg($allNews['images2']);
+        }
+        if (isset($allNews['images3'])) {
+            $allNews['list_img3'] = Util::convertImgToArrayImg($allNews['images3']);
+        }
+        if (isset($allNews['images4'])) {
+            $allNews['list_img4'] = Util::convertImgToArrayImg($allNews['images4']);
+        }
+        if (isset($allNews['images5'])) {
+            $allNews['list_img5'] = Util::convertImgToArrayImg($allNews['images5']);
+        }
+        return $allNews;
+    }
+    public static function getNewsByCategory($id_category) {
+        $allNews = DB::table('news')
+        ->join('category', 'news.category_id', '=', 'category.id')
+        ->select('category.name', 'category.title as title_category', 'news.id', 'news.title', 'news.title_h1', 'news.desc', 'news.bgr', 'news.content', 'news.images1', 'news.text1', 'news.images2', 'news.text2', 'news.images3', 'news.text3', 'news.images4', 'news.text4', 'news.images5', 'news.text5', 'news.hot_news', 'news.created_at')
+        ->where('category_id', $id_category)
+        ->orderBy('created_at', 'DESC')
+        ->paginate(20);
+        
         if (isset($allNews['images1'])) {
             $allNews['list_img1'] = Util::convertImgToArrayImg($allNews['images1']);
         }

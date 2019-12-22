@@ -8,7 +8,7 @@
 
 <article class="social-card social-card--instagram">
     <a class="social-card__link" href="https://www.instagram.com/p/B6I5xEBpqTh/" target="_blank" tabindex="0" rel="external">
-        <img class="social-card__image" src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/p640x640/78737370_2392461417542501_767229813008336089_n.jpg?_nc_ht=scontent.cdninstagram.com&amp;_nc_ohc=F8kZVsROBnkAX-b8J7u&amp;oh=dbb47d22670c3e4ca8d6a5779e4704bb&amp;oe=5E995F6D" alt="">
+        <img class="social-card__image custom_img_news" src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/p640x640/78737370_2392461417542501_767229813008336089_n.jpg?_nc_ht=scontent.cdninstagram.com&amp;_nc_ohc=F8kZVsROBnkAX-b8J7u&amp;oh=dbb47d22670c3e4ca8d6a5779e4704bb&amp;oe=5E995F6D" alt="">
         <footer class="social-card__footer">
             <span class="social-card__source">Instagram</span>
             <span class="social-card__follow">
@@ -24,7 +24,7 @@
 
 <article class="social-card social-card--instagram">
     <a class="social-card__link" href="https://www.instagram.com/p/B6I5lqEJ8sd/" target="_blank" tabindex="0" rel="external">
-        <img class="social-card__image" src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/p640x640/75208746_139027734187165_1287910354774508027_n.jpg?_nc_ht=scontent.cdninstagram.com&amp;_nc_ohc=uYxACKcv6FwAX-zi-Ar&amp;oh=84b82a939dc9a786dfc7f2823080bef9&amp;oe=5E7D18B6" alt="">
+        <img class="social-card__image custom_img_news" src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/p640x640/75208746_139027734187165_1287910354774508027_n.jpg?_nc_ht=scontent.cdninstagram.com&amp;_nc_ohc=uYxACKcv6FwAX-zi-Ar&amp;oh=84b82a939dc9a786dfc7f2823080bef9&amp;oe=5E7D18B6" alt="">
         <footer class="social-card__footer">
             <span class="social-card__source">Instagram</span>
             <span class="social-card__follow">
@@ -40,7 +40,7 @@
 
 <article class="social-card social-card--instagram">
     <a class="social-card__link" href="https://www.instagram.com/p/B6I5VbUpcA2/" target="_blank" tabindex="0" rel="external">
-        <img class="social-card__image" src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/p640x640/75349272_123950145403831_6790894288537213154_n.jpg?_nc_ht=scontent.cdninstagram.com&amp;_nc_ohc=XwGrSy2SeUMAX_ZWeOF&amp;oh=f3ec42f0314fd1359f5cb77a823675f0&amp;oe=5EABE8CE" alt="">
+        <img class="social-card__image custom_img_news" src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/p640x640/75349272_123950145403831_6790894288537213154_n.jpg?_nc_ht=scontent.cdninstagram.com&amp;_nc_ohc=XwGrSy2SeUMAX_ZWeOF&amp;oh=f3ec42f0314fd1359f5cb77a823675f0&amp;oe=5EABE8CE" alt="">
         <footer class="social-card__footer">
             <span class="social-card__source">Instagram</span>
             <span class="social-card__follow">
@@ -56,7 +56,7 @@
 
 <article class="social-card social-card--instagram">
     <a class="social-card__link" href="https://www.instagram.com/p/B5dCT9dJAEo/" target="_blank" tabindex="0" rel="external">
-        <img class="social-card__image" src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/70610817_762217347578637_2884275945074954035_n.jpg?_nc_ht=scontent.cdninstagram.com&amp;_nc_ohc=MjBsL6lo-EkAX-OQLEa&amp;oh=d8118228fec3d30a1f200833102d182b&amp;oe=5E000604" alt="">
+        <img class="social-card__image custom_img_news" src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/70610817_762217347578637_2884275945074954035_n.jpg?_nc_ht=scontent.cdninstagram.com&amp;_nc_ohc=MjBsL6lo-EkAX-OQLEa&amp;oh=d8118228fec3d30a1f200833102d182b&amp;oe=5E000604" alt="">
         <footer class="social-card__footer">
             <span class="social-card__source">Instagram</span>
             <span class="social-card__follow">
@@ -71,7 +71,7 @@
 
 
 <article class="social-card social-card--instagram">
-    <a class="social-card__link" href="https://www.instagram.com/p/B5auEXnJARy/" target="_blank" tabindex="-1" rel="external">
+    <a class="social-card__link custom_img_news" href="https://www.instagram.com/p/B5auEXnJARy/" target="_blank" tabindex="-1" rel="external">
         <img class="social-card__image" src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/p640x640/71185551_120276915794885_1734176710204415973_n.jpg?_nc_ht=scontent.cdninstagram.com&amp;_nc_ohc=I2VUSKP8qGEAX_tYAhA&amp;oh=1e3335b961104f0d85ce8a84ceef97d6&amp;oe=5E000AE7" alt="">
         <footer class="social-card__footer">
             <span class="social-card__source">Instagram</span>

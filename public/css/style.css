@@ -12,3 +12,41 @@
     background: #37a74f;
     font-size: 10px;
 }
+.custom_img_news {
+    width: 320px;
+    height: 320px;
+}
+
+.img_footer {
+    width: 320px;
+    height: 320px;
+}
+
+.large_img {
+    width: 720px;
+    height: 540px;
+}
+
+.mt_22 {
+    margin-top:22px !important;
+}
+#slide-news-none{
+    display: none;
+}
+.slick-none {
+    display: none;
+}
+
+.slick-active {
+    display: block;
+}
+#slide-news-0, #slide-news-1, #slide-news-2, #slide-news-3 {
+    display: block;
+}
+#slide-news-4, #slide-news-5, #slide-news-6, #slide-news-7 {
+    display: none;
+}
+.img_w370_h170 {
+    width: 370px;
+    height: 170px;
+}

@@ -32,6 +32,7 @@ class CreateNewsTable extends Migration
             $table->text('images5')->nullable();
             $table->text('text5')->nullable();
             $table->tinyInteger('hot_news')->nullable()->default(0);
+            $table->tinyInteger('tieu_bieu')->nullable()->default(0);
             $table->timestamps();
         });
     }

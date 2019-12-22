@@ -18,23 +18,23 @@
 
     <div class="closemainmenu">Close Main Menu</div>
     <div class="masthead__primary">
-        <a class="masthead__logo" href="http://www.rolls-roycemotorcars-hanoi.vn">Rolls-Royce Motor Cars Hanoi</a>
+        <a class="masthead__logo" href="http://www.rolls-roycemotorcars-hanoi.vn">GreenCenterVillass</a>
         <div class="masthead__primary__inner">
             <div class="masthead__dealer">
                 <a class="masthead__dealer__link" href="http://www.rolls-roycemotorcars-hanoi.vn">
-            Rolls-Royce Motor Cars Hanoi
+                    Green Center Villass Hanoi
         </a>
             </div>
             <ul class="navigation masthead__navigation">
                 <li class="navigation__item">
-                    <a class="navigation__link navigation__link--language" href="#" data-language-toggle="">
-                        <span class="navigation__icon"></span>
+                    <a class="navigation__link navigation__link--language " href="#" data-language-toggle="">
+                        <span class="navigation__icon" style="margin-top: 22px !important;"></span>
                     </a>
                 </li>
                 <li class="navigation__item">
-                    <a class="navigation__link navigation__link--contact" href="tel:+840438240066" data-contact-toggle="">
-                        <span class="navigation__icon"></span>
-                        <span class="navigation__label">LIÊN HỆ</span>
+                    <a class="navigation__link navigation__link--contact " href="tel:+840438240066" data-contact-toggle="">
+                        <span class="navigation__icon" style="margin-top: 22px !important;"></span>
+                        <span class="navigation__label ">LIÊN HỆ</span>
                     </a>
                 </li>
                 <li class="navigation__item">

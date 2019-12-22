@@ -40,8 +40,9 @@
                                 </td>
                                 <td>{{ $row->created_at }}</td>
 								<td>
-									<a href="{{url('/admin/news/edit/'.$row->id)}}"><button class="btn btn-primary">Sửa</button></a>
-									<a onclick="confirm('Bạn có chắc chắc muốn xóa!')" href="{{url('/admin/news/delete/'.$row->id)}}"><button class="btn btn-danger">Xóa</button></a>
+									<a href="{{url('/admin/news/edit/'.$row->id)}}"><i class="fa fa-pencil-square-o"></i></a>
+									<a onclick="return window.confirm('Bạn có chắc chắc muốn xóa!')" href="{{url('/admin/news/delete/'.$row->id)}}"><i class="fa fa-trash-o btn-danger"></i></a>
+									<a onclick="return window.confirm('Bạn có chắc chắc muốn cho bài viết lên đầu trang!')" href="{{url('/admin/news/hot/'.$row->id)}}"><i class="fa fa-thumbs-o-up"></i></a>
 								</td>
 							</tr>
 						@empty
@@ -52,13 +53,13 @@
 					</table>
 					<!-- end table -->
 					</div>
-					<div class="card-footer" style="padding:7px !important">
-						{{$listNews->links()}}
-					</div>
 				</div>
 			</div>
 			<!-- end card -->
 		</div>
 	</div>
 </div>
+<script>
+	var result = confirm('')
+</script>
 @stop
