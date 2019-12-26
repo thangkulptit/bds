@@ -25,7 +25,7 @@
     <ul class="navbar-nav mr-auto">
       
       <li>  
-        <a class="nav-link active" href="">Trang chủ <span class="sr-only">(current)</span></a>
+        <a class="nav-link active" href="{{url('/admin/home')}}">Trang chủ <span class="sr-only">(current)</span></a>
       </li>
         <li class="nav-item ">
       <a class="nav-link" href="{{url('/admin/inbox')}}">Hòm thư</a>

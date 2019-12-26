@@ -28,11 +28,11 @@
                             </div>
                             <div class="form-group">
                                 <strong><label for="">Mô tả</label></strong>
-                                <textarea type="text" class="form-control" name="desc" id="" placeholder="Mô tả" value="{{isset($record->desc) ? $record->desc : ""}}" ></textarea>
+                                <textarea type="text" class="form-control" name="desc" id="" placeholder="Mô tả">{{isset($record->desc) ? $record->desc : ""}}</textarea>
                             </div>
                             <div class="form-group">
                                 <strong><label for="">Nội dung</label></strong>
-                                <textarea type="text" style="height: 150px;" class="form-control" name="content" id="" placeholder="Nội dung" value="{{isset($record->content) ? $record->content : ""}}" ></textarea>
+                                <textarea type="text" style="height: 150px;" class="form-control" name="content" id="" placeholder="Nội dung">{{isset($record->content) ? $record->content : ""}}</textarea>
                             </div>
                             <div class="form-group">
                                 <strong><label for="">Ảnh đại diện</label></strong>
@@ -41,27 +41,27 @@
                             <div class="form-group">
                                 <strong><label for="">Ảnh vị trí 1</label></strong>
                                 <input type="file" class="form-control" name="images1[]" id="" multiple>
-                                <textarea type="text" class="form-control" name="text1" id="" placeholder="Nội dung vị trí 1" value="{{isset($record->text1) ? $record->text1 : ""}}" ></textarea>
+                                <textarea type="text" class="form-control" name="text1" id="" placeholder="Nội dung vị trí 1">{{isset($record->text1) ? $record->text1 : ""}}</textarea>
                             </div>
                             <div class="form-group">
                                 <strong><label for="">Ảnh vị trí 2</label></strong>
                                 <input type="file" class="form-control" name="images2[]" id="" multiple>
-                                <textarea type="text" class="form-control" name="text2" id="" placeholder="Nội dung vị trí 2" value="{{isset($record->text2) ? $record->text2 : ""}}" ></textarea>
+                                <textarea type="text" class="form-control" name="text2" id="" placeholder="Nội dung vị trí 2">{{isset($record->text2) ? $record->text2 : ""}}</textarea>
                             </div>
                             <div class="form-group">
                                 <strong><label for="">Ảnh vị trí 3</label></strong>
                                 <input type="file" class="form-control" name="images3[]" id="" multiple>
-                                <textarea type="text" class="form-control" name="text3" id="" placeholder="Nội dung vị trí 3" value="{{isset($record->text3) ? $record->text3 : ""}}" ></textarea>
+                                <textarea type="text" class="form-control" name="text3" id="" placeholder="Nội dung vị trí 3">{{isset($record->text3) ? $record->text3 : ""}}</textarea>
                             </div>
                             <div class="form-group">
                                 <strong><label for="">Ảnh vị trí 4</label></strong>
                                 <input type="file" class="form-control" name="images4[]" id="" multiple>
-                                <textarea type="text" class="form-control" name="text4" id="" placeholder="Nội dung vị trí 4" value="{{isset($record->text4) ? $record->text4 : ""}}" ></textarea>
+                                <textarea type="text" class="form-control" name="text4" id="" placeholder="Nội dung vị trí 4">{{isset($record->text4) ? $record->text4 : ""}}</textarea>
                             </div>
                             <div class="form-group">
                                 <strong><label for="">Ảnh vị trí 5</label></strong>
                                 <input type="file" class="form-control" name="images5[]" id="" multiple>
-                                <textarea type="text" class="form-control" name="text5" id="" placeholder="Nội dung vị trí 5" value="{{isset($record->text5) ? $record->text5 : ""}}" ></textarea>
+                                <textarea type="text" class="form-control" name="text5" id="" placeholder="Nội dung vị trí 5">{{isset($record->text5) ? $record->text5 : ""}}</textarea>
                             </div>
                             <strong>Bài viết hot</strong> <input type="checkbox" style="margin-left: 20px;" @if(isset($record) && $record->hot_news == 1) checked @endif class="form-check-input" name="hot_news" id="" value="1">
                          

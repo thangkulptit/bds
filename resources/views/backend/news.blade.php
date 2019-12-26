@@ -14,14 +14,15 @@
 					<!-- table -->
 					<table class="table table-hover table-bordered">
 						<tr>
-                            <th >STT</th>
-                            <th >Background</th>
-							<th >Danh mục</th>
-							<th >Tiêu đề</th>
-                            <th >Mô tả</th>
-                            <th >Hot News</th>
-                            <th >Thời gian tạo</th>
-							<th >Chức năng</th>
+                            <th style="width: 30px;">STT</th>
+                            <th style="width: 60px;">Background</th>
+							<th style="width: 60px;">Danh mục</th>
+							<th style="width: 60px;">Tiêu đề</th>
+							<!-- table
+                            <th style="width: 120px;">Mô tả</th> -->
+                            <th style="width: 60px;">Hot News</th>
+                            <th style="width: 30px;">Thời gian tạo</th>
+							<th style="width: 60px;">Chức năng</th>
 						</tr>
 						
 						@forelse($listNews as $row)
@@ -30,7 +31,7 @@
                                 <td><img width="100px" src="{{ $row->bgr }}" alt="ảnh đại diện" title="ảnh đại diện"></td>
                                 <td>{{ $row->name }}</td>
 								<td>{{ $row->title_h1 }}</td>
-								<td>{{ $row->desc }}</td>
+								<!--<td>{{ $row->desc }}</td>-->
                                 <td style="text-align: center;">
                                     @if($row->hot_news == 1)
                                         <span class="badge-danger">Hot</span>
@@ -40,9 +41,9 @@
                                 </td>
                                 <td>{{ $row->created_at }}</td>
 								<td>
-									<a href="{{url('/admin/news/edit/'.$row->id)}}"><i class="fa fa-pencil-square-o"></i></a>
-									<a onclick="return window.confirm('Bạn có chắc chắc muốn xóa!')" href="{{url('/admin/news/delete/'.$row->id)}}"><i class="fa fa-trash-o btn-danger"></i></a>
-									<a onclick="return window.confirm('Bạn có chắc chắc muốn cho bài viết lên đầu trang!')" href="{{url('/admin/news/hot/'.$row->id)}}"><i class="fa fa-thumbs-o-up"></i></a>
+									<a href="{{url('/admin/news/edit/'.$row->id)}}" title="Sửa bài viết"><i class="fa fa-pencil-square-o"></i></a>
+									<a onclick="return window.confirm('Bạn có chắc chắc muốn xóa!')" href="{{url('/admin/news/delete/'.$row->id)}}" title="Xóa bài viết"><i class="fa fa-trash-o btn-danger"></i></a>
+									<a onclick="return window.confirm('Bạn có chắc chắc muốn cho bài viết lên đầu trang!')" title="Đưa bài viết lên tiêu biểu" href="{{url('/admin/news/hot/'.$row->id)}}"><i class="fa fa-thumbs-o-up"></i></a>
 								</td>
 							</tr>
 						@empty
@@ -59,7 +60,4 @@
 		</div>
 	</div>
 </div>
-<script>
-	var result = confirm('')
-</script>
 @stop

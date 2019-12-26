@@ -12,7 +12,7 @@ class Util {
         $this->util = $util;
     }
     //setting
-    public static function getSettings() {
+    public static function getBelowSettings() {
         //setting = 0 : Duoi' Header
         return Setting::where('type', 0)->limit(4)->paginate(8);
     }
@@ -20,6 +20,10 @@ class Util {
     public static function findLienHeSettings() {
         //lien he seting
         return Setting::where('type', 1)->limit(1)->get();
+    }
+    public static function addSetting() {
+        //lien he seting
+        $st = new Setting();
     }
 
     //category
@@ -90,11 +94,17 @@ class Util {
         if (isset($arrNews['content'])) {
             $news->content = $arrNews['content'];
         }
+        if (isset($arrNews['title1'])) {
+            $news->title1 = $arrNews['title1'];
+        }
         if (isset($arrNews['images1'])) {
             $news->images1 = $arrNews['images1'];
         }
         if (isset($arrNews['text1'])) {
             $news->text1 = $arrNews['text1'];
+        }
+        if (isset($arrNews['title2'])) {
+            $news->title2 = $arrNews['title2'];
         }
         if (isset($arrNews['images2'])) {
             $news->images2 = $arrNews['images2'];
@@ -102,18 +112,27 @@ class Util {
         if (isset($arrNews['text2'])) {
             $news->text2 = $arrNews['text2'];
         }
+        if (isset($arrNews['title3'])) {
+            $news->title3 = $arrNews['title3'];
+        }
         if (isset($arrNews['images3'])) {
             $news->images3 = $arrNews['images3'];
         }        
         if (isset($arrNews['text3'])) {
             $news->text3 = $arrNews['text3'];
-        }        
+        }
+        if (isset($arrNews['title4'])) {
+            $news->title4 = $arrNews['title4'];
+        }    
         if (isset($arrNews['text4'])) {
             $news->text4 = $arrNews['text4'];
         }        
         if (isset($arrNews['images4'])) {
             $news->images4 = $arrNews['images4'];
-        }        
+        }
+        if (isset($arrNews['title5'])) {
+            $news->title5 = $arrNews['title5'];
+        }     
         if (isset($arrNews['text5'])) {
             $news->text5 = $arrNews['text5'];
         }        
@@ -147,11 +166,17 @@ class Util {
         if (isset($arrNews['content'])) {
             $news->content = $arrNews['content'];
         }
+        if (isset($arrNews['title1'])) {
+            $news->title1 = $arrNews['title1'];
+        }
         if (isset($arrNews['images1'])) {
             $news->images1 = $arrNews['images1'];
         }
         if (isset($arrNews['text1'])) {
             $news->text1 = $arrNews['text1'];
+        }
+        if (isset($arrNews['title2'])) {
+            $news->title2 = $arrNews['title2'];
         }
         if (isset($arrNews['images2'])) {
             $news->images2 = $arrNews['images2'];
@@ -159,18 +184,27 @@ class Util {
         if (isset($arrNews['text2'])) {
             $news->text2 = $arrNews['text2'];
         }
+        if (isset($arrNews['title3'])) {
+            $news->title3 = $arrNews['title3'];
+        }
         if (isset($arrNews['images3'])) {
             $news->images3 = $arrNews['images3'];
         }        
         if (isset($arrNews['text3'])) {
             $news->text3 = $arrNews['text3'];
-        }        
+        }
+        if (isset($arrNews['title4'])) {
+            $news->title4 = $arrNews['title4'];
+        }    
         if (isset($arrNews['text4'])) {
             $news->text4 = $arrNews['text4'];
         }        
         if (isset($arrNews['images4'])) {
             $news->images4 = $arrNews['images4'];
-        }        
+        }
+        if (isset($arrNews['title5'])) {
+            $news->title5 = $arrNews['title5'];
+        }     
         if (isset($arrNews['text5'])) {
             $news->text5 = $arrNews['text5'];
         }        
@@ -180,6 +214,14 @@ class Util {
         if (isset($arrNews['hot_news'])) {
             $news->hot_news = $arrNews['hot_news'];
         }
+        $news->save();
+        return true;
+    }
+
+    public static function updateHotDetail($id) {
+        News::where('tieu_bieu', 1)->update(['tieu_bieu' => 0]);
+        $news = News::find($id);
+        $news->tieu_bieu = 1;
         $news->save();
         return true;
     }
@@ -206,7 +248,7 @@ class Util {
     public static function getAllNews() {
         $allNews = DB::table('news')
         ->join('category', 'news.category_id', '=', 'category.id')
-        ->select('category.name', 'category.title as title_category', 'news.id', 'news.title', 'news.title_h1', 'news.desc', 'news.bgr', 'news.content', 'news.images1', 'news.text1', 'news.images2', 'news.text2', 'news.images3', 'news.text3', 'news.images4', 'news.text4', 'news.images5', 'news.text5', 'news.hot_news', 'news.created_at')
+        ->select('category.name', 'category.title as title_category', 'news.id', 'news.title', 'news.title_h1', 'news.desc', 'news.bgr', 'news.content', 'news.title1', 'news.images1', 'news.text1', 'news.title2','news.images2', 'news.text2','news.title3', 'news.images3', 'news.text3', 'news.title4', 'news.images4', 'news.text4', 'news.title5', 'news.images5', 'news.text5', 'news.hot_news', 'news.created_at')
         ->paginate(8);
         // $allNews = News::paginate(8);
         if (isset($allNews['images1'])) {

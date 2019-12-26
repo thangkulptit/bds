@@ -104,4 +104,11 @@ class NewsController extends Controller
         return redirect()->back()->withInput()->with('error', 'Xóa bài viết thất bại!');
     }
 
+    public function updateHot(Request $request) {
+        $id = $request->route('id');
+        if (Util::updateHotDetail($id)) {
+            return redirect()->back()->withInput()->with('success', 'Thành công!');
+        }
+    }
+
 }
