@@ -459,6 +459,15 @@ class Util {
         $stringPath = Util::getPathArrayImg($images);
         return $stringPath;
     }
+
+    public static function getUrl($type) {
+        switch($type) {
+            case 'contact': 
+                $url = '/danh-muc/lien-he';
+                break;
+        }
+        return $url;
+    }
 	
 }
 ?>

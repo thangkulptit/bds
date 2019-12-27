@@ -10,7 +10,7 @@ background--black
         <h1 class="hero__title">{{$item['title']}}</h1>
 
             <a class="button button--primary
-hero__cta" href="{{url('/danh-muc'.'/'.$item['title_category'].'/'.$item['id'].'/'.$item['title'])}}">Li&#234;n hệ với ch&#250;ng t&#244;i</a>
+hero__cta" href="{{url($item['url_contact'])}}">Li&#234;n hệ với ch&#250;ng t&#244;i</a>
     </div>
 </section>
 @endif

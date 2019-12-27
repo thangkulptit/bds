@@ -22,6 +22,7 @@
   " id="module-1073901606">
   <div class="gallery-carousel__body">
     <div class="gallery-carousel__slide">
+      @if(isset($item['title1'],$item['text1'], $item['images1'])) 
       <figure class="gallery-media align--left">
         <picture>
           <!--[if IE 9]>
@@ -36,24 +37,21 @@
             <!--[if IE 9]>
           </video>
           <![endif]-->
-          <img class="gallery-media__media" srcset="/media/1009/veneer-18.jpg?anchor=center&amp;mode=crop&amp;width=990&amp;height=693&amp;rnd=131769072860000000&amp;quality=75&amp;format=jpg" alt="">
+         <img class="gallery-media__media" src="{{$item['images1']}}" srcset="/media/1009/veneer-18.jpg?anchor=center&amp;mode=crop&amp;width=990&amp;height=693&amp;rnd=131769072860000000&amp;quality=75&amp;format=jpg" alt="">
         </picture>
         <figcaption class="gallery-media__caption matchHeight">
           <h3 class="gallery-media__title">
-            <p>ỐP GỖ</p>
+            <p>{{$item['title1']}}</p>
           </h3>
           <div class="content gallery-media__content">
             <p>
-            <p>Xưởng gỗ của chúng tôi chỉ chọn dùng những loại gỗ ốp có chất lượng tuyệt hảo nhất. Được chế tác thủ công bằng bàn tay khéo léo của đội ngũ kỹ thuật viên lành nghề cùng hơn 20.000 cách kết hợp gỗ ốp, mọi kiểu nội thất xe đều độc đáo như chính nước bóng từ cây gỗ được sử dụng.</p>
+            <p>{{$item['text1']}}</p>
             </p> 
           </div>
         </figcaption>
       </figure>
+      @endif
     </div>
   </div>
 </section>
-
-
-
-
 @endsection

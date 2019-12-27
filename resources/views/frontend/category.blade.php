@@ -34,7 +34,7 @@
         <article class="car-grid__item">
             <a class="car-grid__link" href="{{url('/danh-muc'.'/'.$item->title_category.'/'.$item->id.'/'.$item->title)}}">
               <div class="car-grid__name">{{$item->title_h1}}</div>
-              <img class="car-grid__image img_w370_h170" src="{{$item->bgr}}" alt="Phantom">
+              <img class="car-grid__image img_w370_h170" src="{{$item->bgr}}" alt="{{$item->title_h1}}">
             </a>
           </article>
         @endforeach
@@ -44,7 +44,7 @@
 <section class="cta-module theme--white
   " id="module-1073883922">
   <a class="button button--primary
-    cta-module__button" href="https://www.rolls-roycemotorcars-hanoi.vn/about-us/map-page/">Li&#234;n hệ với ch&#250;ng t&#244;i</a>
+  cta-module__button" href="{{url($item->url_contact)}}">Li&#234;n hệ với ch&#250;ng t&#244;i</a>
 </section>
 
 @stop

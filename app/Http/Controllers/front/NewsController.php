@@ -13,6 +13,7 @@ class NewsController extends Controller
         $title = $request->route('title');
         
         $data['item'] = Util::getANewsById($id);
+        $data['item']['url_contact'] = Util::getUrl('contact');
         if ($data['item'] != false && $data['item']['title'] == $title) {
             return view('frontend/news-detail', $data);
         }
