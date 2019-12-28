@@ -4,6 +4,7 @@ use App\Model\Category;
 use App\Model\News;
 use App\Model\Inbox;
 use App\Model\Setting;
+use App\Model\Contact;
 use Illuminate\Support\Facades\DB;
 
 class Util {
@@ -24,6 +25,44 @@ class Util {
     public static function addSetting() {
         //lien he seting
         $st = new Setting();
+    }
+
+    public static function updateContact($arrNews) {
+        $news = Contact::find(1);
+        if (isset($arrNews['title'])) {
+            $news->title = $arrNews['title'];
+        }
+        if (isset($arrNews['bgr'])) {
+            $news->bgr = $arrNews['bgr'];
+        }
+        if (isset($arrNews['desc'])) {
+            $news->desc = $arrNews['desc'];
+        }
+        if (isset($arrNews['address'])) {
+            $news->address = $arrNews['address'];
+        }
+        if (isset($arrNews['phone'])) {
+            $news->phone = $arrNews['phone'];
+        }
+        if (isset($arrNews['hour_online'])) {
+            $news->hour_online = $arrNews['hour_online'];
+        }
+        if (isset($arrNews['gap_go_doi_ngu_title'])) {
+            $news->gap_go_doi_ngu_title = $arrNews['gap_go_doi_ngu_title'];
+        }
+        if (isset($arrNews['gap_go_doi_ngu_desc'])) {
+            $news->gap_go_doi_ngu_desc = $arrNews['gap_go_doi_ngu_desc'];
+        }
+        if (isset($arrNews['list_img'])) {
+            $news->list_img = $arrNews['list_img'];
+        }
+        if (isset($arrNews['list_name'])) {
+            $news->list_name = $arrNews['list_name'];
+        }
+        if (isset($arrNews['list_desc'])) {
+            $news->list_desc = $arrNews['list_desc'];
+        }
+        $news->save();
     }
 
     //category

@@ -43,6 +43,10 @@ Route::group(['namespace' => 'admin', 'middleware'=>'CheckLoggedOut'], function(
 
         Route::get('/news/delete/{id}', 'NewsController@deleteNewsById');
         
+        Route::get('/contact', 'ContactController@getIndex');
+        Route::get('/contact/edit', 'ContactController@getIndexUpdate');
+        Route::post('/contact/edit', 'ContactController@update');
+        
         //inbox
         Route::get('/inbox', 'InboxController@getIndexInbox');
         Route::get('/inbox/{id}', 'InboxController@getInboxDetail');
@@ -57,4 +61,5 @@ Route::group(['namespace' => 'front'], function() {
     Route::get('/danh-muc/{action}', 'CategoryController@getIndex');
 
     Route::get('/danh-muc/{category_title}/{id}/{title}', 'NewsController@getIndexNewsDetail');
+    Route::get('/lien-he', 'ContactController@getIndex');
 });

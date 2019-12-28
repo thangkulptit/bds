@@ -36,6 +36,9 @@
       <li class="nav-item ">
         <a class="nav-link" href="{{url('/admin/news')}}">Bài viết</a>
       </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{url('/admin/contact')}}">Liên hệ</a>
+      </li>
     </ul>        
   </div>
 </nav>

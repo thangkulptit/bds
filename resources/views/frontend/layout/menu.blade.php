@@ -9,10 +9,10 @@
 
     <div class="message message--cookie-warning masthead__cookie-message hidden" data-cookies="">
         <div class="message__body">
-            <p>Chúng tôi sử dụng các cookie để mang tới cho bạn trải nghiệm web tuyệt hảo nhất.&nbsp;<a data-id="64257" href="https://www.rolls-roycemotorcars-hanoi.vn/cookie-policy-page/" title="Cookie Policy Page">Bạn có thể tìm hiểu thêm tại đây.</a></p>
+        <p>Chúng tôi sử dụng các cookie để mang tới cho bạn trải nghiệm web tuyệt hảo nhất.&nbsp;<a data-id="64257" href="{{url('/')}}" title="Cookie Policy Page">Bạn có thể tìm hiểu thêm tại đây.</a></p>
         </div>
         <a href="#" class="message__close" data-cookies-close="">
-     Chận đường
+     Chặng đường
 </a>
     </div>
 
@@ -61,7 +61,7 @@
 </a>
             <div class="contact-menu__section">
                 <span class="dealer-number">
-        <a href="tel:+840438240066"><span style="color: #fff; text-decoration:underline">+84 (0)43 824 0066</span></a>
+            <a href="tel:+840438240066"><span style="color: #fff; text-decoration:underline">+84 (0)43 824 0066</span></a>
                 </span>
             </div>
         </div>

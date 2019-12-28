@@ -95,7 +95,7 @@
     <div class="wrapper">
       <main id="content" role="main">
         @yield('main')
-        @include('frontend/layout/above-footer')
+        {{-- @include('frontend/layout/above-footer') --}}
       </main>
       @include('frontend/layout/footer')
     </div>

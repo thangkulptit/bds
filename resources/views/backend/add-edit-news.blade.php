@@ -29,6 +29,9 @@
                             <div class="form-group">
                                 <strong><label for="">Mô tả</label></strong>
                                 <textarea type="text" class="form-control" name="desc" id="" placeholder="Mô tả">{{isset($record->desc) ? $record->desc : ""}}</textarea>
+                                <script type="text/javascript">
+                                    CKEDITOR.replace("desc");
+                                </script>
                             </div>
                             <div class="form-group">
                                 <strong><label for="">Nội dung</label></strong>

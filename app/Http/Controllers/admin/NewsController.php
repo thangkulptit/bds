@@ -51,6 +51,11 @@ class NewsController extends Controller
         $arr['text3'] = $request->get('text3');
         $arr['text4'] = $request->get('text4');
         $arr['text5'] = $request->get('text5');
+        $arr['title1'] = $request->get('title1');
+        $arr['title2'] = $request->get('title2');
+        $arr['title3'] = $request->get('title3');
+        $arr['title4'] = $request->get('title4');
+        $arr['title5'] = $request->get('title5');
         $arr['hot_news'] = $request->get('hot_news');
 
         Util::addNews($arr);
