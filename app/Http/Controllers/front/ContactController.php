@@ -11,7 +11,6 @@ class ContactController extends Controller
 {
     public function getIndex() {
         $data['contact'] = $this->get();
-        dd($data['contact']);
         return view('frontend/contact', $data);
     }
 

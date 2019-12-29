@@ -96,7 +96,7 @@ background--grey
         <div class="feature-card__body">
           <strong class="feature-card__title">{{$item->title_h1}}</strong>
           <div class="content feature-card__content">
-            <p><span>{{$item->desc}}</span></p>
+            <p><span>{!!$item->desc!!}</span></p>
           </div>
         </div>
       </a>
@@ -120,7 +120,7 @@ background--grey
                   <div class="news-card__body">
                     <h1 class="news-card__title">{{$item->title_h1}}</h1>
                     <div class="news-card__content">
-                      <p>{{$item->desc}}</p>
+                      <p>{!!$item->desc!!}</p>
                     </div>
                   </div>
                 </a>

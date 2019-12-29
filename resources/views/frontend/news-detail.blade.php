@@ -7,7 +7,7 @@
     <section class="text-block text-block--standalone align--centre theme--white" id="module-1073901604">
         <div class="content text-block__content">
             <h2>{{$item['title_h1']}}</h2>
-            <p>{{$item['desc']}}</p>
+            <p>{!!$item['desc']!!}</p>
         </div>
     </section>
 @endif
@@ -17,7 +17,6 @@
         <a class="button button--primary
  cta-module__button" href="https://www.rolls-roycemotorcars-hanoi.vn/be-inspired/">Truyền cảm hứng</a>
 </section>
-
 
 @for($i = 1 ; $i <= 5 ; $i++ )
       
@@ -57,11 +56,11 @@
  theme--white
 " id="module-1073901610">
     <div class="content text-block__content">
-        <h2>{{$item->title_h1}}</h2>
-<p>{{$item->content}}</p>
+        <h2>{{$item['title_h1']}}</h2>
+<p>{!!$item['content']!!}</p>
     </div>
 </section>
-<section data-large-carousel class="large-carousel theme--white
+{{-- <section data-large-carousel class="large-carousel theme--white
 " id="module-1073901611">
     <div class="large-carousel__carousel">
         <div class="large-carousel__body">
@@ -145,6 +144,6 @@
         <div class="large-carousel__status"></div>
         <a class="fullscreen-icon large-carousel__fullscreen" href="/" title="Toggle Fullscreen">Toggle Fullscreen</a>
     </div>
-</section>
+</section> --}}
 @endsection
 

@@ -8,5 +8,27 @@ use App\Models\Setting;
 
 class SettingController extends Controller
 {
+    public function getIndex() {
+
+    }
+
+    public function getIndexAdd() {
+
+    }
+
+    public function getIndexEdit() {
+
+    }
     
+    public function addSettings() {
+
+    }
+
+    public function updateSetting() {
+
+    }
+
+    public function deleteSetting() {
+
+    }
 }

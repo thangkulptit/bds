@@ -13,6 +13,80 @@
     <meta name="author" content="">
     <meta name="priority" content="0">
     <base href="{{asset('/')}}">
+    {{-- loading --}}
+    <style>
+        .wrap-loading {
+            z-index: 99999;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #222;
+            opacity: 0.5;
+            top: 0;
+
+        }
+
+        .lds-ring {
+            top: 45%;
+            left: 45%;
+            display: inline-block;
+            position: absolute;
+            width: 64px;
+            height: 64px;
+        }
+
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            margin: 6px;
+            border: 6px solid #fff;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #fff transparent transparent transparent;
+        }
+
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        body{
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+</style>
+    <div class="wrap-loading">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <strong style="color: white; position: absolute; top: 20px; left: 20px;">Green Center Villass</strong>
+        </div>
+    </div>
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/dst/images/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/dst/images/favicon/apple-touch-icon-60x60.png">
@@ -117,36 +191,23 @@
         <a href="#" class="menu__close"> Ch&amp;#226;̣n đường</a>
       </div>
       <ul class="menu__list menu__list--primary">
+        @foreach($menu as $item)
+          <li class="menu__item">
+            <a class="menu__link" href="{{url('/danh-muc/'.$item->title)}}">{{$item->name}}</a>
+          </li>
+        @endforeach
         <li class="menu__item">
-          <a class="menu__link" href="https://www.rolls-roycemotorcars-hanoi.vn/cars/">DÒNG XE</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="https://www.rolls-roycemotorcars-hanoi.vn/about-us/">GIỚI THIỆU</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="https://www.rolls-roycemotorcars-hanoi.vn/bespoke/">BESPOKE</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="https://www.rolls-roycemotorcars-hanoi.vn/ownership/">SỞ HỮU</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="https://pre-owned.rolls-roycemotorcars.com/searchresults?retailerId=127666" target="_blank">XE ĐÃ QUA SỬ DỤNG</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="https://www.rolls-roycemotorcars.com/en-GB/build-your-rolls-royce.html?_ga=1.164753599.1899456510.1450457196">CẤU HÌNH</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="https://www.rolls-roycemotorcars-hanoi.vn/financial-services/">DỊCH VỤ TÀI CHÍNH</a>
+          <a class="menu__link" href="{{url('/lien-he')}}">Liên hệ</a>
         </li>
       </ul>
-      <ul class="menu__list menu__list--secondary">
+       <ul class="menu__list menu__list--secondary">
         <li class="menu__item">
-          <a class="menu__link" href="https://www.rolls-roycemotorcars-hanoi.vn/legal-information/">PHÁP LÝ</a>
+          <a class="menu__link">PHÁP LÝ</a>
         </li>
         <li class="menu__item">
-          <a class="menu__link" href="https://www.rolls-roycemotorcars-hanoi.vn/cookie-policy-page/">CHÍNH SÁCH COOKIE</a>
+          <a class="menu__link">CHÍNH SÁCH COOKIE</a>
         </li>
-      </ul>
+      </ul> 
     </nav>
     <ul class="accessibility-links">
       <li><a href="#top">Top of Page</a></li>
@@ -167,8 +228,10 @@
           $(window).resize(function () {
               galleryMediaHeightFix();
           });
-      
+          $('.wrap-loading').css({ 'visibility': 'hidden' });
       });
+
+      
     </script>
   </body>
 </html>

@@ -8,7 +8,13 @@ use App\Model\Contact;
 use App\Utils\Util;
 
 class ContactController extends Controller
+
+
 {
+    public function __contructor() {
+        $this->footer = DB::table('pjt_setting')->pluck('value','setting_name')->toArray();
+        View::share('footer', $footer);
+    }
     public function getIndex() {
         $data['contact'] = Contact::find(1);
         return view('backend/contact', $data);

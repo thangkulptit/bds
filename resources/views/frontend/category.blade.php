@@ -44,7 +44,7 @@
 <section class="cta-module theme--white
   " id="module-1073883922">
   <a class="button button--primary
-  cta-module__button" href="{{url($item->url_contact)}}">Li&#234;n hệ với ch&#250;ng t&#244;i</a>
+  cta-module__button" href="{{url($url_contact)}}">Li&#234;n hệ với ch&#250;ng t&#244;i</a>
 </section>
 
 @stop

@@ -61,7 +61,7 @@
 </a>
             <div class="contact-menu__section">
                 <span class="dealer-number">
-            <a href="tel:+840438240066"><span style="color: #fff; text-decoration:underline">+84 (0)43 824 0066</span></a>
+            <a href="tel:+840438240066"><span style="color: #fff; text-decoration:underline">{{$phone_contact->phone}}</span></a>
                 </span>
             </div>
         </div>

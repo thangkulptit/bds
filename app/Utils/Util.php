@@ -27,6 +27,9 @@ class Util {
         $st = new Setting();
     }
 
+    public static function getContact() {
+        return Contact::find(1);
+    }
     public static function updateContact($arrNews) {
         $news = Contact::find(1);
         if (isset($arrNews['title'])) {

@@ -1,12 +1,12 @@
 @extends('backend.master')
-@section('title', 'Thêm bài viết')
+@section('title', 'Thêm Setting')
 @section('main')
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-12">
 			<!-- card -->
 			<div class="card border-primary">
-				<div class="card card-header bg-primary text-white" style="padding:7px !important;">{{isset($record) ? 'Sửa bài viết' : 'Thêm bài viết'}}</div>
+				<div class="card card-header bg-primary text-white" style="padding:7px !important;">{{isset($record) ? 'Sửa Setting' : 'Thêm Setting'}}</div>
 					<form method="post" enctype="multipart/form-data">
                         
                         <div class="card-body">
@@ -14,7 +14,7 @@
                                 <div class="col-md-6">
                                     <select class="form-control" id="sel1" name="category_id" required>
                                       @if (sizeof($listCate) > 0)
-                                        <option value="">Chọn danh mục</option>
+                                        <option value="">Chọn loại setting</option>
                                         @foreach ($listCate as $rows)
                                             <option @if(isset($record) && $record->category_id == $rows->id) selected @endif value="{{$rows->id}}">{{$rows->name}}</option>
                                         @endforeach
