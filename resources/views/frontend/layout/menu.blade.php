@@ -18,10 +18,10 @@
 
     <div class="closemainmenu">Close Main Menu</div>
     <div class="masthead__primary">
-        <a class="masthead__logo" href="http://www.rolls-roycemotorcars-hanoi.vn">GreenCenterVillass</a>
+        <a class="masthead__logo" href="{{url('/')}}">GreenCenterVillass</a>
         <div class="masthead__primary__inner">
             <div class="masthead__dealer">
-                <a class="masthead__dealer__link" href="http://www.rolls-roycemotorcars-hanoi.vn">
+                <a class="masthead__dealer__link" href="{{url('/')}}">
                     Green Center Villass Hanoi
         </a>
             </div>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="contact-menu contact-menu--fixed contact-menu--hidden">
-            <a class="contact-menu__section" href="https://www.rolls-roycemotorcars-hanoi.vn/about-us/map-page/">
+        <a class="contact-menu__section" href="{{url('/lien-he')}}">
     SẮP XẾP GỌI LẠI
 </a>
             <div class="contact-menu__section">
