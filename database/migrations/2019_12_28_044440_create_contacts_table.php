@@ -19,14 +19,14 @@ class CreateContactsTable extends Migration
             $table->text('bgr');
             $table->text('desc');
             $table->text('address');
-            $table->text('phone');
-            $table->text('hour_online');
-            $table->string('gap_go_doi_ngu_title');
+            $table->string('phone');
+            $table->string('hour_online');
+            $table->text('gap_go_doi_ngu_title');
             $table->text('gap_go_doi_ngu_desc');
             $table->text('list_img');
             $table->text('list_name');
             $table->text('list_desc');
-            $table->text('status');
+            $table->string('status');
             $table->timestamps();
         });
     }

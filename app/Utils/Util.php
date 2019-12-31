@@ -15,7 +15,7 @@ class Util {
     //setting
     public static function getBelowSettings() {
         //setting = 0 : Duoi' Header
-        return Setting::where('type', 0)->limit(4)->paginate(8);
+        return Setting::where('type', 1)->limit(4)->paginate(8);
     }
 
     public static function findLienHeSettings() {

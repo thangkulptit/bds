@@ -38,7 +38,7 @@
                                 </td>
                                 <td>{{ $row->created_at }}</td>
 								<td>
-									<a onclick="confirm('Bạn có chắc chắc muốn xóa!')" href="{{url('/admin/inbox/delete/'.$row->id)}}"><button class="btn btn-danger">Xóa</button></a>
+									<a onclick="return window.confirm('Bạn có chắc chắc muốn xóa!')" href="{{url('/admin/inbox/delete/'.$row->id)}}" title="Xóa"><i class="fa fa-trash-o btn-danger"></i></a>
 								</td>
 							</tr>
 						@empty

@@ -26,4 +26,19 @@ $(document).ready(function() {
         $(this).hide();
         $('#arrow_right').show();
     });
+
+    const check = $('#slide-news-4').attr('tabindex');
+    if (check) {
+        $("#arrow_right").hide();
+        $("#arrow_left").hide();
+    }
+
+
+
+
+
+
+
+
+
 });

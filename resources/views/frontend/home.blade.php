@@ -7,36 +7,16 @@ background--grey
 <div class="video-hero__player">
   <div class="videowrap-container" id="video-1073883242">
     <div style="display: block; position: relative; max-width: 100%;">
-      <div id="videoContainer-1073883242" style="padding-top: 56.25%;">
+      <iframe style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;" src="https://www.youtube.com/embed/IKZEmLvYVF0?&autoplay=1"
+      width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+      {{-- <div id="videoContainer-1073883242" style="padding-top: 56.25%;">
         <iframe style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;" src="//players.brightcove.net/1634657725001/ByQDUBdxb_default/index.html?videoId=6101424516001&amp;autoplay&amp;muted&amp;playsinline&amp;preload/" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div>
-    </div>
+    </div> --}}
   </div>
   <div id="desktop-vid-title" class="hero__body align--centre-mobile-only">
   </div>
 </div>
-<script type="text/JavaScript">
-  var myPlayer,
-  playerHTML,
-  playerStyle,
-  playerData = {
-      'accountId': '1634657725001',
-      'playerId': 'ByQDUBdxb'
-  },
-  
-  videoId = '6101424516001';
-  playerStyle = 'style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"';
-  
-  // dynamically build the player video element
-  playerHTML = '<iframe ' + playerStyle
-  + ' src=\"//players.brightcove.net/'
-  + playerData.accountId + '/'
-  + playerData.playerId + '_default/index.html?videoId='
-  + videoId + '&autoplay&muted&playsinline&preload/"'
-  + ' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>';
-  
-  // inject the player code into the DOM
-  document.getElementById('videoContainer-1073883242').innerHTML = playerHTML;
-</script>
+
 @if(isset($newsTieuBieu) && sizeof($newsTieuBieu) > 0)
 @foreach ($newsTieuBieu as $item)
 <div class="hero__body">
@@ -56,7 +36,7 @@ background--grey
     <a class="link-block__item" href="{{$item->link}}">
       <div class="link-block__body">
       <strong class="link-block__title">{{$item->title}}</strong>
-        <div class="link-block__content">{{$item->desc}}</div>
+        <div class="link-block__content">{!!$item->desc!!}</div>
       </div>
     </a>
     @endforeach

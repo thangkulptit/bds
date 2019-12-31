@@ -15,7 +15,7 @@
 <section class="cta-module theme--white
 " id="module-1073901605">
         <a class="button button--primary
- cta-module__button" href="https://www.rolls-roycemotorcars-hanoi.vn/be-inspired/">Truyền cảm hứng</a>
+ cta-module__button" href="{{url('/')}}">Truyền cảm hứng</a>
 </section>
 
 @for($i = 1 ; $i <= 5 ; $i++ )

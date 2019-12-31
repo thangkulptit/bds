@@ -51,6 +51,14 @@ Route::group(['namespace' => 'admin', 'middleware'=>'CheckLoggedOut'], function(
         Route::get('/inbox', 'InboxController@getIndexInbox');
         Route::get('/inbox/{id}', 'InboxController@getInboxDetail');
         Route::get('/inbox/{id}', 'InboxController@deleteInboxById');
+
+        //setting
+        Route::get('/setting', 'SettingController@getView');
+        Route::get('/setting/edit/{id}', 'SettingController@getViewEdit');
+        Route::post('/setting/edit/{id}', 'SettingController@updateSetting');
+        Route::get('/setting/add', 'SettingController@getViewAdd');
+        Route::post('/setting/add', 'SettingController@addSettings');
+        Route::get('/setting/delete/{id}', 'SettingController@deleteSetting');
     });
 });
 //add inbox 

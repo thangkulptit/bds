@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="navigation__item">
-                    <a class="navigation__link navigation__link--contact " href="tel:+840438240066" data-contact-toggle="">
+                <a class="navigation__link navigation__link--contact " href="tel:+{{$phone_contact->phone}}" data-contact-toggle="">
                         <span class="navigation__icon" style="margin-top: 22px !important;"></span>
                         <span class="navigation__label ">LIÊN HỆ</span>
                     </a>
@@ -61,7 +61,7 @@
 </a>
             <div class="contact-menu__section">
                 <span class="dealer-number">
-            <a href="tel:+840438240066"><span style="color: #fff; text-decoration:underline">{{$phone_contact->phone}}</span></a>
+            <a href="tel:+{{$phone_contact->phone}}"><span style="color: #fff; text-decoration:underline">{{$phone_contact->phone}}</span></a>
                 </span>
             </div>
         </div>

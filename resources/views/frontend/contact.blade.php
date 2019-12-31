@@ -22,7 +22,7 @@
 <section class="text-block text-block--standalone align--centre theme--white" id="module-1073901604">
     <div class="content text-block__content">
         <h2>{{$contact['title']}}</h2>
-        <p>{{$contact['desc']}}</p>
+        <p>{!!$contact['desc']!!}</p>
     </div>
 </section>
 @endif
@@ -62,8 +62,16 @@
                     </div>
                 </div>
                 <footer class="base-card__footer">
-                    <a class="base-card__cta" href="{{url('/lien-he')}}">Xem bản đồ</a>
+                    <span style="cursor: pointer;" class="base-card__cta showBanDo">Xem bản đồ</span>
                 </footer>
+                <script>
+                    var body = $("html, body");
+                    $('.showBanDo').click(function(){
+                        body.stop().animate({scrollTop:0}, 500, 'swing', function() { 
+                     });
+                    });
+                    
+                </script>
 
             </article>
         </div>
@@ -98,7 +106,7 @@
                 <img class="base-card__image" style="width: 400px; height: 267px;" src="" alt="">
                 <div class="base-card__body">
                     <h1 class="base-card__title">{{$contact['list_name'][$i]}}</h1>
-                    <div class="base-card__subtitle">{{!!html_entity_decode($contact['list_desc'][$i])!!}} </div>
+                    <div class="base-card__subtitle">{!!($contact['list_desc'][$i])!!} </div>
                     <div class="content base-card__content">
 
                     </div>
