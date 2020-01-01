@@ -11,24 +11,20 @@
 					<!-- table -->
 					<table class="table table-hover table-bordered">
 						<tr>
-                            <th col=1>STT</th>
                             <th col=2>Họ và tên</th>
-							<th col=2>Địa chỉ</th>
 							<th col=2>Số ĐT</th>
-                            <th col=2>Email</th>
-                            <th col=4>Nội dung</th>
+							<th col=2>Email</th>
+							<th>Dự án quan tâm</th>
                             <th col=1>Trạng thái</th>
 							<th col=1>Thời gian gửi</th>
 						</tr>
 						
 						@forelse($listInbox as $row)
 							<tr>
-								<td>{{ $row->id }}</td>
                                 <td>{{ $row->fullname }}</td>
-								<td>{{ $row->address }}</td>
 								<td>{{ $row->phone }}</td>
 								<td>{{ $row->email }}</td>
-								<td>{{ $row->content }}</td>
+								<td>{{ $row->du_an_quan_tam }}</td>
                                 <td style="text-align: center;">
                                     @if($row->status == 0)
                                         <span class="badge-danger">Chưa xem</span>
@@ -36,8 +32,9 @@
                                         <span class="badge-success">Đã xem</span>
                                     @endif
                                 </td>
-                                <td>{{ $row->created_at }}</td>
+                                <td>{{ $row->created_at->format('H:i:s d/m/Y')}}</td>
 								<td>
+									<a title="Xem chi tiết" href="{{url('/admin/inbox/detail/'.$row->id)}}"><i class="fa fa-commenting-o"></i></a>
 									<a onclick="return window.confirm('Bạn có chắc chắc muốn xóa!')" href="{{url('/admin/inbox/delete/'.$row->id)}}" title="Xóa"><i class="fa fa-trash-o btn-danger"></i></a>
 								</td>
 							</tr>

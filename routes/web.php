@@ -21,6 +21,7 @@ Route::group(['namespace' => 'Auth'], function(){
 });
 Route::group(['namespace' => 'admin', 'middleware'=>'CheckLoggedOut'], function(){
     Route::group(['prefix' => 'admin'], function() {
+        Route::get('/logout', 'HomeController@logout');
         Route::get('/home', 'HomeController@getIndex');
         Route::get('/category', 'CategoryController@getIndexCategory');
         //add
@@ -49,8 +50,8 @@ Route::group(['namespace' => 'admin', 'middleware'=>'CheckLoggedOut'], function(
         
         //inbox
         Route::get('/inbox', 'InboxController@getIndexInbox');
-        Route::get('/inbox/{id}', 'InboxController@getInboxDetail');
-        Route::get('/inbox/{id}', 'InboxController@deleteInboxById');
+        Route::get('/inbox/detail/{id}', 'InboxController@getInboxDetail');
+        Route::get('/inbox/delete/{id}', 'InboxController@deleteInboxById');
 
         //setting
         Route::get('/setting', 'SettingController@getView');
@@ -61,10 +62,13 @@ Route::group(['namespace' => 'admin', 'middleware'=>'CheckLoggedOut'], function(
         Route::get('/setting/delete/{id}', 'SettingController@deleteSetting');
     });
 });
-//add inbox 
-Route::post('inbox/add', 'InboxController@getInboxDetail');
+
+
 
 Route::group(['namespace' => 'front'], function() {
+    //add inbox 
+    Route::post('inbox/add', 'InboxController@postInbox');
+
     Route::get('/', 'HomeController@getIndex');
     Route::get('/danh-muc/{action}', 'CategoryController@getIndex');
 

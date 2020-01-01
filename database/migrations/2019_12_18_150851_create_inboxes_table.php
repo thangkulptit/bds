@@ -16,7 +16,7 @@ class CreateInboxesTable extends Migration
         Schema::create('inbox', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('fullname')->nullable();
-            $table->string('address')->nullable();
+            $table->string('du_an_quan_tam')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->text('content')->nullable();

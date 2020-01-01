@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <!-- Content metadata -->
+    <title>{{$item['title_h1']}}</title>
     <meta name="robots" content="all, noydir, noodp">
-    <meta name="description" content="Đại lý chính hãng  Rolls-Royce Motor Cars Hanoi thuộc sở hữu bởi Công ty cổ phần ô tô Regal, với Phòng trưng bày Rolls-Royce Motor Cars Hanoi và Xưởng Dịch Vụ Hậu Mãi chính hãng duy nhất tại Việt Nam chính thức hoạt động vào tháng 08 năm 2014. ">
-    <meta name="title" content="Rolls-Royce Motor Cars Hanoi ">
+    <meta name="description" content="{{$item['desc']}}">
+    <meta name="title" content="{{$item['title_h1']}}">
     <meta name="author" content="">
     <meta name="priority" content="0">
     <base href="{{asset('/')}}">
@@ -88,37 +89,18 @@
         </div>
     </div>
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/dst/images/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/dst/images/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/dst/images/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/dst/images/favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/dst/images/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/dst/images/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/dst/images/favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/dst/images/favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/dst/images/favicon/apple-touch-icon-180x180.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="/dst/images/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/dst/images/favicon/favicon-194x194.png" sizes="194x194">
-    <link rel="icon" type="image/png" href="/dst/images/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/dst/images/favicon/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/dst/images/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/dst/images/favicon/manifest.json">
-    <link rel="mask-icon" href="/dst/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/dst/images/favicon/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="Rolls-Royce Motor Cars">
+
+    <meta name="apple-mobile-web-app-title" content="{{$item['title_h1']}}">
     <meta name="application-name" content="Rolls-Royce Motor Cars">
     <meta name="msapplication-TileColor" content="#333333">
-    <meta name="msapplication-TileImage" content="/dst/images/favicon/mstile-144x144.png">
-    <meta name="msapplication-config" content="/dst/images/favicon/browserconfig.xml">
     <meta name="theme-color" content="#333333">
-    <meta property="og:title" content="Rolls-Royce Motor Cars Hanoi ">
-    <meta property="og:description" content="Đại lý chính hãng  Rolls-Royce Motor Cars Hanoi thuộc sở hữu bởi Công ty cổ phần ô tô Regal, với Phòng trưng bày Rolls-Royce Motor Cars Hanoi và Xưởng Dịch Vụ Hậu Mãi chính hãng duy nhất tại Việt Nam chính thức hoạt động vào tháng 08 năm 2014. ">
+    <meta property="og:title" content="{{$item['title_h1']}}">
+    <meta property="og:description" content="{{$item['desc']}}">
     <meta property="og:url" content="{{asset('/')}}">
-    <meta name="twitter:title" content="Rolls-Royce Motor Cars Hanoi ">
-    <meta name="twitter:description" content="Đại lý chính hãng  Rolls-Royce Motor Cars Hanoi thuộc sở hữu bởi Công ty cổ phần ô tô Regal, với Phòng trưng bày Rolls-Royce Motor Cars Hanoi và Xưởng Dịch Vụ Hậu Mãi chính hãng duy nhất tại Việt Nam chính thức hoạt động vào tháng 08 năm 2014. ">
+    <meta name="twitter:title" content="{{$item['title_h1']}}">
+    <meta name="twitter:description" content="{{$item['desc']}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Translation strings -->
     <script async="" src="js/import3.js"></script>

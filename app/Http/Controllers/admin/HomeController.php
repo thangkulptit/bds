@@ -12,6 +12,10 @@ class HomeController extends Controller
             return redirect()->intended('/login');
         }
     }
+    public function logout() {
+        Auth::logout();
+        return redirect()->intended('/login');
+    }
     public function getIndex() {
         return view('backend/home');
     }

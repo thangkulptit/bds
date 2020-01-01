@@ -391,7 +391,8 @@ class Util {
 
     //Inbox
     public static function getAllInbox() {
-        $arr = Inbox::paginate(16);
+        $arr = Inbox::orderBy('created_at', 'DESC')
+                    ->paginate(16);
         return $arr;
     }
 

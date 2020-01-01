@@ -1,4 +1,4 @@
-@extends('frontend/master')
+@extends('frontend/master-detail')
 
 @section('main')
 @include('frontend/layout/header')
