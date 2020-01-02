@@ -73,5 +73,6 @@ Route::group(['namespace' => 'front'], function() {
     Route::get('/danh-muc/{action}', 'CategoryController@getIndex');
 
     Route::get('/danh-muc/{category_title}/{id}/{title}', 'NewsController@getIndexNewsDetail');
+    Route::get('/test', 'NewsController@test');
     Route::get('/lien-he', 'ContactController@getIndex');
 });

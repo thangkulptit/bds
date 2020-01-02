@@ -5,9 +5,6 @@
 	<div class="row justify-content-center">
 		<div class="col-md-12">
 			<!-- card -->
-			<div style="margin:15px 0px">
-				<a href="{{url('/admin/category/add')}}" class="btn btn-primary">Thêm</a>
-			</div>
 			<div class="card border-primary">
 				<div class="card card-header bg-primary text-white" style="padding:7px !important;">Danh mục</div>
 					<div class="card-body">

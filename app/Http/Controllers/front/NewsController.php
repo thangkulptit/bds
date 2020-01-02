@@ -5,6 +5,8 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Utils\Util;
+use Illuminate\Support\Facades\File;
+
 class NewsController extends Controller
 {
     public function getIndexNewsDetail(Request $request) {
@@ -19,4 +21,5 @@ class NewsController extends Controller
         }
 
     }
+
 }

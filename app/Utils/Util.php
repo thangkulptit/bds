@@ -515,6 +515,14 @@ class Util {
         }
         return $url;
     }
+    public static function deleteFile($arrPath) {
+        foreach($arrPath as $item) {
+            $itemValid = substr($item, 1);
+            if(File::exists($itemValid)) {
+                File::delete($itemValid);
+            }
+        }
+    }
 	
 }
 ?>

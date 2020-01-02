@@ -1,3 +1,7 @@
+a {
+    text-decoration: none !important;
+}
+
 .badge-danger {
     padding: 4px;
     border-radius: 10%;

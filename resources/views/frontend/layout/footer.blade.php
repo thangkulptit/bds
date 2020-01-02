@@ -44,6 +44,7 @@
                 <div id="msg_response" style="visibility: hidden;" class="alert alert-success" role="alert">
                     This is a success alert—check it out!
                 </div>
+                <p style="color: black;">Vui lòng nhập đầy đủ thông tin *</p>
             </div>
             <div class="form-group">
                 <input type="text" id="name" class="form-control" placeholder="Họ tên (*)" required>

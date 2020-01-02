@@ -38,7 +38,7 @@
         <div class="card-grid__item">
 
             <article class="base-card base-card--location">
-                <img class="base-card__image" src="{{$contact['list_img']['1']}}" alt="{{$contact['title']}}" />
+                <img class="base-card__image" src="{{$contact['list_img']['0']}}" alt="{{$contact['title']}}" />
 
                 <div class="base-card__body">
                     <h1 class="base-card__title">Showroom</h1>
