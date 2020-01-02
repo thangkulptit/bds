@@ -13,6 +13,7 @@ class HomeController extends Controller
         $data['arrNews'] = Util::getAllNews();
         $data['arrSetting'] = Util::getBelowSettings();
         $data['newsTieuBieu'] = Util::getANewsTieuBieu();
+        $data['url_youtube'] = Util::getUrlYoutube();
         return view('frontend/home', $data);
     }
 }

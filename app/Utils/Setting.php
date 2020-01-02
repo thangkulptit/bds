@@ -22,6 +22,10 @@ class SettingUtil {
         return Setting::where('type', 1)->limit(1)->get();
     }
 
+    public static function getUrlYoutube() {
+        return Setting::where('type', 2)->limit(1)->get();
+    }
+
     public static function addSetting($arrSetting) {
         $st = new Setting();
         $st->type = $arrSetting['type'];

@@ -27,8 +27,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $menu = Util::getListCategory();
         $phone = Util::getContact();
+        $youtubeUrl = Util::getUrlYoutube();
         View::share('menu', $menu);
         View::share('url_contact', '/lien-he');
         View::share('phone_contact', $phone);
+        
     }
 }

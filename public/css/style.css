@@ -11,6 +11,9 @@
     justify-content: center;
     align-items: center;
 }
+.d_block {
+    display: block;
+}
 .phone {
     text-align: left;
 }
@@ -170,6 +173,7 @@
     position: fixed;
     top: 70%;
     right: 10%;
+    z-index: 1;
   }
 
   .phonering-alo-phone.phonering-alo-static {

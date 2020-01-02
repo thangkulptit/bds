@@ -26,6 +26,10 @@ class Util {
         //lien he seting
         $st = new Setting();
     }
+    public static function getUrlYoutube() {
+        return DB::select('SELECT link FROM settings WHERE type = 2 limit 1');
+        // return Setting::where('type', 2)->limit(1)->get();
+    }
 
     public static function getContact() {
         return Contact::find(1);

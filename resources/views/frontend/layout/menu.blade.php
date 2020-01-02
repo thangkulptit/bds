@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="navigation__item">
-                <a class="navigation__link navigation__link--contact " href="tel:+{{$phone_contact->phone}}" data-contact-toggle="">
+                <a class="navigation__link navigation__link--contact d_block" href="tel:+{{$phone_contact->phone}}" data-contact-toggle="">
                         <span class="navigation__icon" style="margin-top: 22px !important;"></span>
                         <span class="navigation__label ">LIÊN HỆ</span>
                     </a>

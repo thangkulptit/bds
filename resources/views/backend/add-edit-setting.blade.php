@@ -15,6 +15,7 @@
                                     <select class="form-control" id="sel1" name="type" required>
                                         <option value="0">Chọn loại setting</option>
                                         <option value="1">Header</option>
+                                        <option value="2">Url Youtube</option>
                                     </select>
                                 </div>
                               </div>
